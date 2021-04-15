@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Test task Android</string>
+
+    <!--MainActivity-->
+    <string name="change_positive">+%1$.2f%%</string>
+    <string name="change_negative">%1$.2f%%</string>
+    <string name="main_marketCap">$ %1$s</string>
+    <string name="main_price">$ %1$s</string>
+    <string name="main_cryptocurrency">CRYPTOCURRENCY</string>
+    <string name="main_price_text">PRICE</string>
+    <string name="main_24h_text">24H</string>
+    <!--/MainActivity-->
+</resources>

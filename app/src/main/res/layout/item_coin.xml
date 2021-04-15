@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_2"
+        android:background="@color/background_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_rank"
+        style="@style/Heading.Filled"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="1" />
+
+    <ImageView
+        android:id="@+id/image_view_icon"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginVertical="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_view_rank"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_name"
+        style="@style/Heading.Filled"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        app:layout_constraintBottom_toTopOf="@id/text_view_symbol"
+        app:layout_constraintEnd_toStartOf="@id/guideline_50"
+        app:layout_constraintStart_toEndOf="@id/image_view_icon"
+        app:layout_constraintTop_toTopOf="@id/image_view_icon"
+        tools:text="Bitcoin" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_symbol"
+        style="@style/Heading.Normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="2dp"
+        app:layout_constraintBottom_toBottomOf="@id/image_view_icon"
+        app:layout_constraintEnd_toStartOf="@id/guideline_50"
+        app:layout_constraintStart_toEndOf="@id/image_view_icon"
+        app:layout_constraintTop_toBottomOf="@id/text_view_name"
+        tools:text="BTC" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_price"
+        style="@style/Heading.Filled"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:ellipsize="end"
+        android:singleLine="true"
+        app:layout_constraintBottom_toTopOf="@id/text_view_marketCap"
+        app:layout_constraintEnd_toStartOf="@id/guideline_80"
+        app:layout_constraintStart_toStartOf="@id/guideline_50"
+        app:layout_constraintTop_toTopOf="@id/image_view_icon"
+        tools:text="$ 57.006.41" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_marketCap"
+        style="@style/Heading.Normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="2dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        app:layout_constraintBottom_toBottomOf="@id/image_view_icon"
+        app:layout_constraintEnd_toEndOf="@id/text_view_price"
+        app:layout_constraintStart_toStartOf="@id/guideline_50"
+        app:layout_constraintTop_toBottomOf="@id/text_view_price"
+        tools:text="$ 1.06T" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_view_change"
+        style="@style/Heading.Filled"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:ellipsize="end"
+        android:singleLine="true"
+        app:layout_constraintBottom_toTopOf="@id/graph"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_80"
+        app:layout_constraintTop_toTopOf="@id/image_view_icon"
+        tools:text="+3.25%" />
+
+    <com.robinhood.spark.SparkView
+        android:id="@+id/graph"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_25"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_2"
+        android:layout_marginEnd="@dimen/dp_16"
+        app:layout_constraintBottom_toBottomOf="@id/image_view_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_view_marketCap"
+        app:layout_constraintTop_toBottomOf="@id/text_view_change"
+        tools:ignore="MissingConstraints" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.53" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
